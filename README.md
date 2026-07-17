@@ -92,25 +92,43 @@ python predict.py
 
 # Mathematical Background
 
-The entire algorithm was implemented manually using NumPy.
+The Softmax Regression algorithm was implemented entirely from scratch using NumPy.
 
-### Softmax
+### Softmax Function
 
-\[
-P(y=i)=\frac{e^{z_i}}{\sum_j e^{z_j}}
-\]
+```text
+P(y=i) = exp(z_i) / Σ exp(z_j)
+```
 
 ### Cross Entropy Loss
 
-\[
-L=-\frac{1}{m}\sum y\log(\hat y)
-\]
+```text
+L = -(1/m) Σ Σ y(i,j) log(ŷ(i,j))
+```
 
-### Gradient Descent
+### Gradient
 
-\[
-W=W+\alpha\frac{X^T(Y-\hat Y)}{m}
-\]
+```text
+dW = Xᵀ (Y - Ŷ) / m
+```
+
+### Weight Update
+
+```text
+W = W + α · dW
+```
+
+### Bias Gradient
+
+```text
+db = Σ (Y - Ŷ) / m
+```
+
+### Bias Update
+
+```text
+b = b + α · db
+```
 
 ---
 
